@@ -19,10 +19,12 @@ class Translator:
                   preserve_formatting: PF = None, formality: Formality = None) -> str:
         payload = {
             'text': text,
-            'target_lang': target_lang.value
+            # 'target_lang': target_lang.value
+            'target_lang': target_lang
         }
         if source_lang:
-            payload['source_lang'] = source_lang.value
+            # payload['source_lang'] = source_lang.value
+            payload['source_lang'] = source_lang
         if split_sentences:
             payload['split_sentences'] = split_sentences.value
         if preserve_formatting:
