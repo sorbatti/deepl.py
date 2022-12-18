@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from .adapter import Adapter
 from .enums import Formality
@@ -14,8 +14,8 @@ class Translator:
     def __init__(self, adapter: Adapter) -> None:
         self._adapter = adapter
 
-    def translate(self, text, *, target_lang: TL,
-                  source_lang: SL = None, split_sentences: SS = None,
+    def translate(self, text, *, target_lang: str,
+                  source_lang: str = None, split_sentences: SS = None,
                   preserve_formatting: PF = None, formality: Formality = None) -> str:
         payload = {
             'text': text,
